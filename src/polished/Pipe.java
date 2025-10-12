@@ -56,8 +56,6 @@ public class Pipe {
             // AND bird top is above the pipe's top (b.y < top, which is always true since pipe top is at y=0)
             boolean top_collision = b.y < top; 
             
-            // Collision with bottom pipe: bird top is below bottom pipe's top edge (b.y < bottom)
-            // AND bird bottom is below the pipe's bottom edge (b.y + 40 > bottom, which is always true since pipe bottom is at y=600)
             boolean bottom_collision = b.y + 40 > bottom;
 
             return top_collision || bottom_collision;
