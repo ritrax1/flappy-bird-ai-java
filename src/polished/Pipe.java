@@ -20,8 +20,8 @@ public class Pipe {
     // Static block to load images only once when the class is loaded
     static {
         try {
-            TOP_IMAGE = ImageIO.read(new File("assets/topPipe.png"));
-            BOTTOM_IMAGE = ImageIO.read(new File("assets/bottomPipe.png"));
+            TOP_IMAGE = ImageIO.read(new File("./assets/topPipe.png"));
+            BOTTOM_IMAGE = ImageIO.read(new File("./assets/bottomPipe.png"));
         } catch (IOException e) {
             System.out.println("Error loading pipe images");
         }

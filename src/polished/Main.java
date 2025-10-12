@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-// NEW IMPORTS for file saving/loading
+// NEW IMPORTS for file saving/loading (kept from previous step)
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
@@ -22,11 +22,15 @@ public class Main extends JPanel {
     final int DELAY_MS = 20; // 50 FPS
 
     public Main() {
-        try {
+       try {
             bgImg = ImageIO.read(new File("./assets/backGround.png"));
         } catch (IOException e) {
             System.out.println("Error loading background.png");
         }
+        
+        // --- NEW: Initialize Database ---
+        DatabaseManager.initializeDatabase();
+        // -------------------------------
 
         JFrame frame = new JFrame("Flappy Bird AI");
         frame.setSize(800, 600);
@@ -76,11 +80,10 @@ public class Main extends JPanel {
 
         if (population.allDead()) {
             
-            // --- NEW: Save Best Genome Logic ---
-            if (population.generation % 10 == 0) { // Save the best genome every 10 generations
+            // Save the best genome every 10 generations
+            if (population.generation % 10 == 0) { 
                 population.saveBestGenome("best_genome_gen_" + population.generation + ".bin");
             }
-            // ------------------------------------
             
             population.naturalSelection();
             pipes.clear();
