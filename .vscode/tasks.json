@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Flappy",
+      "type": "shell",
+      "command": "b:; cd 'b:\\dev\\flappy-bird-ai-java\\src\\polished'; & 'C:\\Program Files\\Java\\jdk-25\\bin\\java.exe' '@C:\\Users\\abhim\\AppData\\Local\\Temp\\cp_ac07np17rqm1rhd93au8ouycp.argfile' 'Main'",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

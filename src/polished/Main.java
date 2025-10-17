@@ -7,9 +7,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-// NEW IMPORTS for file saving/loading (kept from previous step)
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
 
 public class Main extends JPanel { 
     Population population = new Population();
@@ -30,7 +27,6 @@ public class Main extends JPanel {
         
         // --- NEW: Initialize Database ---
         DatabaseManager.initializeDatabase();
-        // -------------------------------
 
         JFrame frame = new JFrame("Flappy Bird AI");
         frame.setSize(800, 600);
